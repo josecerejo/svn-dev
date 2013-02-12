@@ -1,0 +1,2104 @@
+/*
+  Running Squiz Matrix
+  Developed by Squiz - http://www.squiz.net
+  Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 12 February 2013 12:28:47
+*/
+
+
+/*
+    William Hill - Financials
+    Built by Squiz Ltd.
+    Target browsers: Webkit, Firefox, IE7+
+
+    Table of Contents:
+    01. General
+    02. Buttons
+    03. Overlay
+    04. Header
+    05. Navigation
+    06. Content
+    07. Placeholder Content
+    08. Footer
+    09. Help
+    10. Miscellaneous
+
+    * There are lots of useful classes in Miscellaneous. Use them before adding
+      extra markup or CSS please (avoid unnecessary float: left).
+    * Any wrapper/container elements such as header, #content, or footer should
+      be declared appropriately under General styles (line 66).
+*/
+
+/* ---- 01. GENERAL STYLES ---- */
+
+html {
+    height: 100%;
+}
+body {
+    color: #222;
+    height: 100%;
+    font: normal 13px/1.36em "Helvetica Neue", Arial, sans-serif;
+}
+a {
+    color: #00BFF3;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition:    color .2s ease-in-out;
+    -ms-transition:     color .2s ease-in-out;
+    -o-transition:      color .2s ease-in-out;
+}
+img {
+    max-width: 100%;
+}
+h1 {
+    margin-bottom: 10px;
+    font: normal 22px/22px "Helvetica Neue", Arial, sans-serif;
+}
+h2 {
+    margin-bottom: 10px;
+    font: bold 14px/18px "Helvetica Neue", Arial, sans-serif;
+}
+h3 {
+    font: bold 12px/18px "Helvetica Neue", Arial, sans-serif;
+}
+p {
+    margin-bottom: 1em;
+    line-height: 1.618em;
+}
+h2:last-child,
+h3:last-child,
+p:last-child {
+    margin-bottom: 0;
+}
+/* global container styles: */
+header,
+nav,
+#content,
+footer {
+    width: 995px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    clear: both;
+    z-index: 2;
+}
+
+/* ---- 02. BUTTONS STYLES ---- */
+
+.button {
+    background-color: #8CB900;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8CB900), color-stop(100%, #507200));
+    background-image: -webkit-linear-gradient(#8CB900 0%, #507200 100%);
+    background-image:    -moz-linear-gradient(#8CB900 0%, #507200 100%);
+    background-image:     -ms-linear-gradient(#8CB900 0%, #507200 100%);
+    background-image:      -o-linear-gradient(#8CB900 0%, #507200 100%);
+    background-image:         linear-gradient(#8CB900 0%, #507200 100%);
+    color: #F3F3F3 !important;
+    width: 70px;
+    height: 17px;
+    margin: 0;
+    padding: 0 5px;
+    display: inline-block;
+    font: normal 11px/15px "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    text-shadow: 0 1px 0 rgba(0,0,0,.4);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
+    -moz-box-shadow:    inset 0 -1px 0 rgba(255,255,255,.4);
+    box-shadow:         inset 0 -1px 0 rgba(255,255,255,.4);
+    -webkit-border-radius: 9px;
+    border-radius:         9px;
+    -webkit-transition: none;
+    -moz-transition:    none;
+    -ms-transition:     none;
+    -o-transition:      none;
+}
+.button:hover {
+    background-color: #8CB900;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ACD920), color-stop(100%, #507200));
+    background-image: -webkit-linear-gradient(#ACD920 0%, #507200 100%);
+    background-image:    -moz-linear-gradient(#ACD920 0%, #507200 100%);
+    background-image:     -ms-linear-gradient(#ACD920 0%, #507200 100%);
+    background-image:      -o-linear-gradient(#ACD920 0%, #507200 100%);
+    background-image:         linear-gradient(#ACD920 0%, #507200 100%);
+    color: white;
+    margin: 0;
+}
+.button:active,
+input.button:focus {
+    background-color: #507200;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #507200), color-stop(100%, #8CB900));
+    background-image: -webkit-linear-gradient(#507200 0%, #8CB900 100%);
+    background-image:    -moz-linear-gradient(#507200 0%, #8CB900 100%);
+    background-image:     -ms-linear-gradient(#507200 0%, #8CB900 100%);
+    background-image:      -o-linear-gradient(#507200 0%, #8CB900 100%);
+    background-image:         linear-gradient(#507200 0%, #8CB900 100%);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.4);
+    -moz-box-shadow:    inset 0 0 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.4);
+    box-shadow:         inset 0 0 2px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.button.big {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/2292/bg-play-button.gif?v=0.0.2") no-repeat;
+    width: 135px;
+    height: 27px;
+    font-size: 13px;
+    line-height: 27px;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    box-shadow:     none;
+    -webkit-border-radius: 0px;
+    border-radius:         0px;
+}
+.button.big.join,
+.button.big.mobile {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0014/2291/bg-join-button.png?v=0.0.2") no-repeat;
+    width: 121px;
+    margin-right: 10px;
+}
+.button.big.mobile {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0004/25816/bg-mobile-button.gif?v=0.0.2") no-repeat;
+    width: 125px;
+}
+.button.big.big-text {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.internet-explorer .grid .button,
+.internet-explorer .schedule .button{
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0012/22206/ie-grid-button.png?v=0.0.6");
+}
+.internet-explorer #crossSellStaticBanner_products .button {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0009/22221/ie-static-banner-button.png?v=0.0.4");
+}
+.internet-explorer .grid .button:hover,
+.internet-explorer .schedule .button:hover {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0003/22476/ie-grid-button-hover.png?v=0.0.2");
+}
+.internet-explorer #crossSellStaticBanner_products .button:hover {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0005/22478/ie-static-banner-button-hover.png?v=0.0.2");
+}
+.internet-explorer .grid .button:active,
+.internet-explorer .schedule .button:active {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0020/22475/ie-grid-button-active.png?v=0.0.2");
+}
+.internet-explorer #crossSellStaticBanner_products .button:active {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0004/22477/ie-static-banner-button-active.png?v=0.0.2");
+}
+
+/* ---- 03. OVERLAY & PROMOTIONS STYLES ---- */
+
+.overlay {
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 998;
+}
+.internet-explorer .overlay {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0007/32758/trans-black-60.png?v=0.0.2");
+}
+.overlay .container {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/32073/bg-overlay-container.jpg?v=0.0.2");
+    width: 415px;
+    height: 145px;
+    margin-left: -238px;
+    padding: 80px 30px 0;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    z-index: 999;
+}
+.overlay .container p {
+    margin-bottom: 26px;
+    font-size: 14px;
+    line-height: 1.3em;
+    text-align: center;
+}
+.overlay .container a {
+    width: 200px;
+    height: 37px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid #999;
+    display: block;
+    font-size: 23px;
+    line-height: 35px;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    box-shadow:         none;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
+}
+.internet-explorer .overlay .container a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0008/32759/bg-overlay-button.png?v=0.0.2");
+    height: 40px;
+    border: 0;
+    line-height: 38px;
+}
+
+#promotions {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+#promotions a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#modalOverlay_dimmer {
+    background-color: #222;
+    filter: alpha(opacity=75);
+    opacity: 0.75;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100500;
+    -moz-opacity: .75;
+    -khtml-opacity: 0.75;
+}
+#modalDimmer {
+    background-color: #000;
+    opacity: 0.6;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+.modalPopup3 {
+    color: #333;
+    width: 326px;
+    height: 80px;
+    margin: -40px 0 0 -163px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    z-index: 100019;
+}
+#popupTop {
+    background-image: url(http://media.squiz.williamhill.com/__data/assets/image/0019/37810/transparent-popup-top.png);
+    height: 8px;
+    overflow:  hidden;
+    z-index: 100019;
+}
+#popupMain {
+    background-color: transparent;
+    background-image: url(http://media.squiz.williamhill.com/__data/assets/image/0009/37809/transparent-popup-bg.png);
+    background-repeat: no-repeat no-repeat;
+    background-position: 0 100%;
+    margin: auto;
+    padding: 10px;
+    overflow:  hidden;
+    font-size: 12px;
+    line-height: 16px;
+}
+.popupTitle {
+    color: #002b48;
+    font-size: 17px;
+    font-weight: 700;
+}
+.modalButtons {
+    margin: 15px 0 0;
+    padding: 0;
+    text-align: center;
+}
+.popupBtn {
+    background-color: transparent;
+    background-image: url(http://financials.squiz.williamhill.com/__data/assets/image/0008/37808/popupBtn.png);
+    background-repeat: no-repeat no-repeat;
+    background-position: 50% 0;
+    color: #000;
+    width: 85px;
+    height: 19px;
+    margin: 0 2px;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+#modalOverlay_content {
+    background-color: transparent;
+    width: 998px;
+    height: 550px;
+    margin: -275px 0 0 -499px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100501;
+}
+
+/* ---- 04. HEADER STYLES ---- */
+
+header {
+    background-color: #003756;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #003756), color-stop(100%, #002335));
+    background-image: -webkit-linear-gradient(#003756 0%, #002335 100%);
+    background-image:    -moz-linear-gradient(#003756 0%, #002335 100%);
+    background-image:     -ms-linear-gradient(#003756 0%, #002335 100%);
+    background-image:      -o-linear-gradient(#003756 0%, #002335 100%);
+    background-image:         linear-gradient(#003756 0%, #002335 100%);
+    height: 88px;
+    z-index: 3;
+}
+header a#logo {
+    min-width: 180px;
+    height: 39px;
+    margin-top: 26px;
+    margin-left: 20px;
+    float: left;
+    display: block;
+    z-index: 2;
+}
+header #info-area #help-text {
+    margin-top: 5px;
+}
+header #info-area #help-text a.help {
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: 8px;
+    text-decoration: underline;
+}
+header #info-area #help-text span {
+    color: #196A91;
+    margin-right: 10px;
+    vertical-align: 8px;
+}
+#info-area {
+    width: 660px;
+    height: 29px;
+    margin-top: 10px;
+    margin-right: 6px;
+    float: right;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: right;
+}
+#info-area .additional-login-info{
+    margin: 5px 8px 0 0;
+    border-right: 1px solid #1C688A;
+    display: inline-block;
+    vertical-align: top;
+}
+.ie7 .it #info-area .additional-login-info{
+    display: inline;
+}
+#info-area .additional-login-info span{
+    color: #eee;
+    padding: 0 8px 0 0;
+    border-right: 1px solid black;
+    font-size: 10px;
+}
+.it #info-area .additional-login-info span a {
+    color: #EEEEEE;
+}
+#info-area a.help {
+    color: white;
+    margin-right: 121px;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: 8px;
+    text-decoration: underline;
+}
+.ie7 .it #help-text {
+    display: inline;
+}
+#info-area #language-selector {
+    height: 25px;
+    margin: 0 0 3px 5px;
+    float: right;
+    display: inline-block;
+    position: relative;
+    z-index: 99;
+}
+#info-area #language-selector a {
+    background-color: #01395a;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #01395a), color-stop(100%, #013655));
+    background-image: -webkit-linear-gradient(#01395a 0%, #013655 100%);
+    background-image:    -moz-linear-gradient(#01395a 0%, #013655 100%);
+    background-image:     -ms-linear-gradient(#01395a 0%, #013655 100%);
+    background-image:      -o-linear-gradient(#01395a 0%, #013655 100%);
+    background-image:         linear-gradient(#01395a 0%, #013655 100%);
+    color: white;
+    width: 114px;
+    height: 20px;
+    margin: 0;
+    border: 1px solid #1a6990;
+    border-bottom-color: #195a78;
+    display: none;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: baseline;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+    -webkit-transition: none;
+    -moz-transition:    none;
+    -ms-transition:     none;
+    -o-transition:      none;
+}
+#info-area #language-selector a.active {
+    display: block;
+}
+#info-area #language-selector img {
+    width: 16px;
+    margin-top: 4px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: top;
+}
+#info-area #language-selector .dropdown {
+    background: white;
+    width: 480px;
+    max-height: 126px;
+    padding: 5px 0 10px 10px;
+    border: 1px solid #858585;
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    z-index: 98;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+}
+#info-area #language-selector .dropdown a {
+    background: none;
+    color: #222;
+    width: 110px;
+    margin-right: 10px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px dotted #444444;
+    float: left;
+    display: block;
+    text-align: left;
+    vertical-align: baseline;
+    cursor: pointer;
+    -webkit-border-radius: 0px;
+    border-radius:         0px;
+}
+.internet-explorer #info-area #language-selector .dropdown a#language-7825,
+.internet-explorer #info-area #language-selector .dropdown a#language-7825 {
+    font-family: "Lucida Sans Unicode", sans-serif;
+}
+#info-area #language-selector .dropdown a.active,
+#info-area #language-selector .dropdown a:hover {
+    color: #0493CE;
+    border-color: #0493CE;
+    text-decoration: none;
+}
+#info-area #language-selector .dropdown a.active {
+    font-weight: 700;
+}
+#info-area #language-selector .dropdown a:nth-child(6),
+#info-area #language-selector .dropdown a:last-child {
+    border-bottom: 0;
+}
+#info-area #language-selector .dropdown .arrow {
+    color: white;
+    width: 0px;
+    height: 0px;
+    border-right:  4px solid transparent;
+    border-bottom: 4px solid white;
+    border-left:   4px solid transparent;
+    position: absolute;
+    top: -4px;
+    right: 50px;
+}
+#login-section {
+    background: #002e48;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#002e48), color-stop(50%,#00486e), color-stop(100%,#00486e));
+    background: -webkit-linear-gradient(left, #002e48 0%, #00486e 50%, #00486e 100%);
+    background:    -moz-linear-gradient(left, #002e48 0%, #00486e 50%, #00486e 100%);
+    background:     -ms-linear-gradient(left, #002e48 0%, #00486e 50%, #00486e 100%);
+    background:      -o-linear-gradient(left, #002e48 0%, #00486e 50%, #00486e 100%);
+    background:             linear-gradient(left, #002e48 0%, #00486e 50%, #00486e 100%);
+    width: 750px;
+    height: 23px;
+    padding: 3px 7px 3px 0;
+    float: right;
+    text-align: right;
+}
+
+#login-section a {
+    color: white;
+    margin-left: 5px;
+    font-size: 12px;
+    text-decoration: underline;
+}
+#login-section input[type="text"],
+#login-section input[type="password"] {
+    color: #7B7B7B;
+    width: 90px;
+    height: 15px;
+    margin-left: 5px;
+    padding: 2px;
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 15px;
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.4);
+    -moz-box-shadow:    inset 0 0 2px rgba(0,0,0,.4);
+    box-shadow:         inset 0 0 2px rgba(0,0,0,.4);
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+}
+#login-section input.login,
+#login-section a.logout,
+#login-section a.join {
+    background-color: #65CCF5;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #65CCF5), color-stop(100%, #008DC0));
+    background-image: -webkit-linear-gradient(#65CCF5 0%, #008DC0 100%);
+    background-image:    -moz-linear-gradient(#65CCF5 0%, #008DC0 100%);
+    background-image:     -ms-linear-gradient(#65CCF5 0%, #008DC0 100%);
+    background-image:      -o-linear-gradient(#65CCF5 0%, #008DC0 100%);
+    background-image:             linear-gradient(#65CCF5 0%, #008DC0 100%);
+    height: 19px;
+    margin-bottom: 1px;
+    margin-left: 5px;
+    padding: 0 1px;
+    display: inline-block;
+    font: normal 12.1px/18px "Helvetica Neue", Arial, sans-serif;
+    vertical-align: middle;
+    text-decoration: none;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    box-shadow:         none;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+}
+.internet-explorer #login-section input.login,
+.internet-explorer #login-section a.logout,
+.internet-explorer #login-section a.join {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0008/22220/ie-login-button.png?v=0.0.2");
+}
+.internet-explorer .it #login-section a.logout{
+    width: 68px;
+}
+#login-section a.join {
+    background-color: #ABD900;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ABD900), color-stop(100%, #507400));
+    background-image: -webkit-linear-gradient(#ABD900 0%, #507400 100%);
+    background-image:    -moz-linear-gradient(#ABD900 0%, #507400 100%);
+    background-image:     -ms-linear-gradient(#ABD900 0%, #507400 100%);
+    background-image:      -o-linear-gradient(#ABD900 0%, #507400 100%);
+    background-image:         linear-gradient(#ABD900 0%, #507400 100%);
+}
+.internet-explorer #login-section a.join {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0004/32755/ie-join-button.png?v=0.0.2");
+}
+.at #login-section a.join,
+.fr #login-section a.join,
+.pt #login-section a.join,
+.de #login-section a.join,
+.cs #login-section a.join,
+.sr #login-section a.join,
+.ru #login-section a.join {
+    width: 92px;
+}
+.internet-explorer .at #login-section a.join,
+.internet-explorer .fr #login-section a.join,
+.internet-explorer .pt #login-section a.join,
+.internet-explorer .de #login-section a.join,
+.internet-explorer .cs #login-section a.join,
+.internet-explorer .sr #login-section a.join,
+.internet-explorer .ru #login-section a.join {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0005/32756/ie-join-button-92.png?v=0.0.2");
+}
+.hu #login-section a.join,
+.sl #login-section a.join,
+.ro #login-section a.join {
+    width: 100px;
+}
+.internet-explorer .hu #login-section a.join,
+.internet-explorer .sl #login-section a.join,
+.internet-explorer .ro #login-section a.join {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0006/32757/ie-join-button-100.png?v=0.0.2");
+}
+.fi #login-section input.login
+ {
+    width: 92px;
+}
+#signinLoader {
+    color: #93c227;
+    width: 600px;
+    padding-top: 4px;
+    float: right;
+    display: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#signinLoader img {
+    float: right;
+}
+#signinLoader div {
+    margin-right: 10px;
+    float: right;
+}
+#signinDetails {
+    line-height: 23px;
+}
+#signinDetails ul li {
+    height: 23px;
+    float: right;
+    display: inline;
+    text-align: left;
+}
+#signinDetails li.userName {
+    color: white;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+#signinDetails li.userName span,
+#signinDetails li.userName p {
+    margin-left: 3px;
+    display: inline;
+}
+#signinDetails li.userHighlight {
+    background: #003253;
+    height: 19px;
+    margin-right: 10px;
+    padding: 1px 5px;
+    border: 1px solid #1F5876;
+    font-size: 0.9em;
+    line-height: 19px;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+}
+#signinDetails li.userHighlight a {
+    color: #7DDDFF;
+    margin-right: 5px;
+}
+#signinDetails li.userHighlight p {
+    color: white;
+    display: inline;
+}
+#signinDetails li.userHighlight .mainBalance,
+#signinDetails li.userHighlight .userBalance {
+    color: #7DDDFF;
+    display: inline;
+}
+#signinDetails li.messages a {
+   background: url("http://designs.squiz.williamhill.com/__data/assets/image/0004/8716/icon-envelope.png?v=0.0.2") center center no-repeat;
+   color: #7DDDFF;
+   padding-right: 35px;
+   text-decoration: underline;
+}
+#signinDetails li.deposit a:hover {
+    text-decoration: none;
+}
+#signinDetails #obDepositLabel {
+    color: #7DDDFF;
+}
+#signinDetails .userHighlight > a:hover {
+    text-decoration: none;
+}
+#italyLogin{
+    line-height: 14px;
+}
+
+/* ---- 05. NAVIGATION STYLES ---- */
+
+nav {
+    background: #00243A;
+    width: 979px;
+    height: 65px;
+    padding: 0 8px;
+}
+.placeholder nav {
+    height: auto;
+}
+nav ul#primary {
+    background-color: #F1F1F1;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F1F1F1), color-stop(96%, #C8E5F5), color-stop(96%, #00243A), color-stop(100%, #00243A));
+    background-image: -webkit-linear-gradient(white 0%, #C8E5F5 96%, #00243A 96%, #00243A 100%);
+    background-image:    -moz-linear-gradient(white 0%, #C8E5F5 96%, #00243A 96%, #00243A 100%);
+    background-image:     -ms-linear-gradient(white 0%, #C8E5F5 96%, #00243A 96%, #00243A 100%);
+    background-image:      -o-linear-gradient(white 0%, #C8E5F5 96%, #00243A 96%, #00243A 100%);
+    background-image:         linear-gradient(white 0%, #C8E5F5 96%, #00243A 96%, #00243A 100%);
+    width: 977px;
+    height: 29px;
+    border: 1px solid #F1F1F1;
+    border-bottom: 0;
+}
+.internet-explorer nav ul#primary {
+    background-image: url("http://designs.squiz.williamhill.com/__data/assets/image/0016/22129/bg-primary-nav.png?v=0.0.10");
+}
+nav li {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition:    all 0.2s ease-in-out;
+    -ms-transition:     all 0.2s ease-in-out;
+    -o-transition:      all 0.2s ease-in-out;
+}
+nav ul#primary li {
+    width: 88px;
+    height: 28px;
+    border-bottom: 1px solid #00243A;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+nav ul#primary li:hover {
+    background: white;
+}
+nav ul#primary li.active {
+    background-color: #34ABD7;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #34ABD7), color-stop(100%, #1A97D1));
+    background-image: -webkit-linear-gradient(#34ABD7 0%, #1A97D1 100%);
+    background-image:    -moz-linear-gradient(#34ABD7 0%, #1A97D1 100%);
+    background-image:     -ms-linear-gradient(#34ABD7 0%, #1A97D1 100%);
+    background-image:      -o-linear-gradient(#34ABD7 0%, #1A97D1 100%);
+    background-image:         linear-gradient(#34ABD7 0%, #1A97D1 100%);
+    border-bottom: 1px solid #1A97D1;
+}
+.internet-explorer nav ul#primary li.active {
+    background-image: url("http://designs.squiz.williamhill.com/__data/assets/image/0009/32688/bg-primary-nav-active.png?v=0.0.2");
+}
+nav ul#primary li.live-casino {
+    width: 98px;
+}
+nav ul#primary li.on-tv a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0019/2296/on-tv.png?v=0.0.2") no-repeat;
+}
+nav ul#primary li.on-tv-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/9222/on-tv-green.png?v=0.0.2") no-repeat;
+}
+nav ul#primary li.on-tv-orange a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0016/9223/on-tv-orange.png?v=0.0.2") no-repeat;
+}
+.el nav ul#primary li.new-orange a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0016/24091/tabs-new-orange-el.gif?v=0.0.2") no-repeat;
+}
+.de nav ul#primary li.new-orange a,
+.at nav ul#primary li.new-orange a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/24090/tabs-new-orange-de.gif?v=0.0.2") no-repeat;
+}
+.sv nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0005/24089/tabs-new-green-sv.gif?v=0.0.2") no-repeat;
+}
+.ru nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0004/24088/tabs-new-green-ru.gif?v=0.0.2") no-repeat;
+}
+.pl nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0003/24087/tabs-new-green-pl.gif?v=0.0.2") no-repeat;
+}
+.de nav ul#primary li.new-green a,
+.at nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0020/24086/tabs-new-green-de.gif?v=0.0.2") no-repeat;
+}
+.cn nav ul#primary li.new-green a,
+.zh nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0019/24085/tabs-new-green-cn.gif?v=0.0.2") no-repeat;
+}
+nav ul#primary li.new-orange a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0017/24092/tabs-new-orange-en.gif?v=0.0.2") no-repeat;
+}
+nav ul#primary li.new-green a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0017/24092/tabs-new-orange-en.gif?v=0.0.2") no-repeat;
+}
+nav ul#primary li.new-purple a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/24117/tabs-new-purple-en.png?v=0.0.2") no-repeat;
+}
+nav.ten-tabs ul#primary li {
+    width: 97px;
+}
+nav.nine-tabs ul#primary li {
+    width: 108px;
+}
+nav.eight-tabs ul#primary li {
+    width: 122px;
+}
+nav.seven-tabs ul#primary li {
+    width: 139px;
+}
+nav.six-tabs ul#primary li {
+    width: 162px;
+}
+nav.five-tabs ul#primary li {
+    width: 195px;
+}
+nav.four-tabs ul#primary li {
+    width: 244px;
+}
+nav.eleven-tabs ul#primary li.last {
+    width: 87px;
+}
+nav.ten-tabs ul#primary li.last {
+    width: 96px;
+}
+nav.nine-tabs ul#primary li.last {
+    width: 107px;
+}
+nav.eight-tabs ul#primary li.last {
+    width: 121px;
+}
+nav.seven-tabs ul#primary li.last {
+    width: 138px;
+}
+nav.six-tabs ul#primary li.last {
+    width: 161px;
+}
+nav.five-tabs ul#primary li.last {
+    width: 194px;
+}
+nav.four-tabs ul#primary li.last {
+    width: 243px;
+}
+nav.el ul#primary li {
+    width: 101px !important;
+}
+nav.el ul#primary li.live-casino {
+    width: 141px !important;
+}
+nav.el ul#primary li.last {
+    width: 129px !important;
+}
+nav ul li a {
+    color: #002F4A;
+    width: auto;
+    height: 28px;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 25px;
+}
+nav ul#primary li a {
+    border-right: 1px solid #00243A;
+}
+nav ul#primary li.last a {
+    border-right: 0;
+}
+nav ul#primary li.active a {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+nav ul#secondary {
+    background-color: #1A97D1;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1A97D1), color-stop(100%, #133A63));
+    background-image: -webkit-linear-gradient(#1A97D1 0%, #133A63 100%);
+    background-image:    -moz-linear-gradient(#1A97D1 0%, #133A63 100%);
+    background-image:     -ms-linear-gradient(#1A97D1 0%, #133A63 100%);
+    background-image:      -o-linear-gradient(#1A97D1 0%, #133A63 100%);
+    background-image:         linear-gradient(#1A97D1 0%, #133A63 100%);
+    width: 977px;
+    height: 35px;
+    border-right: 1px solid #F1F1F1;
+    border-left:  1px solid #F1F1F1;
+}
+.internet-explorer nav ul#secondary {
+    background-image: url("http://designs.squiz.williamhill.com/__data/assets/image/0008/32687/bg-secondary-nav.png?v=0.0.2");
+}
+nav ul#secondary li {
+    margin: 5px 13px;
+    float: left;
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    z-index: 98;
+}
+nav ul#secondary li a {
+    color: white;
+    height: 13px;
+    padding: 6px 9px;
+    font-size: 12px;
+    line-height: 13px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+nav ul#secondary li a:hover {
+    text-decoration: underline;
+}
+nav ul#secondary li.active a {
+    background: #FFD504;
+    color: #213857;
+    padding: 5px 8px;
+    border: 1px solid white;
+    text-decoration: none !important;
+    text-shadow: 0 1px 1px rgba(255,255,255,.5);
+}
+nav ul#secondary li a span {
+    padding-left: 3px;
+}
+.internet-explorer nav ul#secondary li a span {
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: 14px;
+}
+
+/* ---- 06. CONTENT STYLES ---- */
+
+#content {
+    background: #F1F1F1;
+    max-width: 965px;
+    padding: 7px;
+    border: 8px solid #00243A;
+    border-top: 0;
+}
+#content aside {
+    width: 288px;
+    float: right;
+    display: inline-block;
+}
+#content aside .item {
+    background-color: #6d747a;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #6d747a), color-stop(100%, #41464a));
+    background-image: -webkit-linear-gradient(left, #6d747a 0%, #41464a 100%);
+    background-image:    -moz-linear-gradient(left, #6d747a 0%, #41464a 100%);
+    background-image:     -ms-linear-gradient(left, #6d747a 0%, #41464a 100%);
+    background-image:      -o-linear-gradient(left, #6d747a 0%, #41464a 100%);
+    background-image:         linear-gradient(left, #6d747a 0%, #41464a 100%);
+    color: white;
+    width: auto;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: 11px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    -moz-box-shadow:    0 2px 4px rgba(0,0,0,.4);
+    box-shadow:         0 2px 4px rgba(0,0,0,.4);
+    -webkit-border-radius: 8px;
+    border-radius:         8px;
+}
+.internet-explorer #content aside .item {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0007/32668/bg-aside-item.png?v=0.0.4") repeat-y;
+}
+#content aside .item .title {
+    width: auto;
+    height: 26px;
+    margin: 0 0 5px -10px;
+    padding-left: 30px;
+    font-size: 12px;
+    line-height: 14px;
+}
+#content aside .item.most-popular-bets .title {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0013/30064/aside-title-most-popular.jpg?v=0.0.2");
+}
+#content aside .item.top-movers .title {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/30066/aside-title-top-movers.jpg?v=0.0.2");
+    padding-left: 35px;
+}
+#content aside .item.recent-news .title {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0014/30065/aside-title-recent-news.jpg?v=0.0.2");
+}
+#content aside .item dl {
+    width: 100%;
+    clear: both;
+}
+#content aside .most-popular-bets dl dt,
+#content aside .most-popular-bets dl dd,
+#content aside .most-popular-bets .label,
+#content aside .most-popular-bets .values {
+    width: 100px;
+    height: 11px;
+    margin: 4px 0;
+    float: left;
+    display: inline-block;
+    line-height: 11px;
+}
+#content aside .most-popular-bets dl dd,
+#content aside .most-popular-bets .values {
+    width: 168px;
+}
+#content aside .top-movers dl dt,
+#content aside .top-movers dl dd {
+    width: 200px;
+    height: 27px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    float: left;
+    display: inline-block;
+    line-height: 27px;
+}
+#content aside .top-movers dl dd {
+    width: 68px;
+}
+#content aside .top-movers dl dd span {
+    -webkit-animation: fadein 2.5s 1 forwards;
+    animation:         fadein 2.5s 1 forwards;
+}
+@-webkit-keyframes fadein {
+    0% { opacity: 0; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadein {
+    0% { opacity: 0; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}
+#content aside .top-movers dl dd .left {
+    width: 19px;
+    height: 27px;
+}
+#content aside .top-movers dl dd .up,
+#content aside .top-movers dl dd .mid {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0007/30310/aside-top-movers-up.gif?v=0.0.2") center 6px no-repeat;
+}
+#content aside .top-movers dl dd .down {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0015/30309/aside-top-movers-down.gif?v=0.0.2") center 6px no-repeat;
+}
+#content aside .recent-news li {
+    padding: 4px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    float: left;
+    display: inline-block;
+}
+#content aside .recent-news li .time {
+    color: #B4D7E2;
+    width: 44px;
+    padding: 10px 4px 0 0;
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+#content aside .recent-news li .text {
+    width: 220px;
+    float: left;
+    display: inline-block;
+}
+#content aside .recent-news li strong {
+    display: block;
+    clear: both;
+}
+.internet-explorer #content aside .top-movers dl dt,
+.internet-explorer #content aside .top-movers dl dd,
+.internet-explorer #content aside .recent-news li {
+    border-top: 1px solid #7C8389;
+    border-bottom: 1px solid #292D30;
+}
+#content aside .top-movers dl dt.first,
+#content aside .top-movers dl dd.first,
+#content aside .recent-news li.first {
+    border-top: 0;
+}
+#content aside .top-movers dl dt.last,
+#content aside .top-movers dl dd.last,
+#content aside .recent-news li.last {
+    border-bottom: 0;
+}
+#content aside .item .progress {
+    background-color: #F8CD40;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #F8CD40), color-stop(100%, #E1983A));
+    background-image: -webkit-linear-gradient(left, #F8CD40 0%, #E1983A 100%);
+    background-image:    -moz-linear-gradient(left, #F8CD40 0%, #E1983A 100%);
+    background-image:     -ms-linear-gradient(left, #F8CD40 0%, #E1983A 100%);
+    background-image:      -o-linear-gradient(left, #F8CD40 0%, #E1983A 100%);
+    background-image:         linear-gradient(left, #F8CD40 0%, #E1983A 100%);
+    width: auto;
+    height: 9px;
+    margin-top: 1px; /* pushes it to middle of <dd> */
+    margin-left: 4px; /* fixes background from showing through */
+    -webkit-border-radius: 5px;
+    border-radius:         5px;
+}
+.internet-explorer #content aside .item .progress {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0017/32750/bg-progress.png?v=0.0.4") right;
+}
+#content aside .item .progress .bar {
+    -webkit-transition: width 1.25s ease;
+    transition:         width 1.25s ease;
+}
+#content aside .item .progress .bar .loader {
+    background-color: #2B86B2;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2B86B2), color-stop(100%, #193450));
+    background-image: -webkit-linear-gradient(#2B86B2 0%, #193450 100%);
+    background-image:    -moz-linear-gradient(#2B86B2 0%, #193450 100%);
+    background-image:     -ms-linear-gradient(#2B86B2 0%, #193450 100%);
+    background-image:      -o-linear-gradient(#2B86B2 0%, #193450 100%);
+    background-image:         linear-gradient(#2B86B2 0%, #193450 100%);
+    width: 100%;
+    height: 9px;
+    margin-left: -4px; /* fixes background from showing through */
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius:         5px 0 0 5px;
+    -webkit-animation: progress 2.5s 1 forwards;
+    animation:         progress 2.5s 1 forwards;
+}
+.internet-explorer #content aside .item .progress .bar .loader {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0018/32751/bg-progress-loader.png?v=0.0.4") left;
+}
+@keyframes progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@-webkit-keyframes progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+#content .content-container {
+    width: 668px;
+    float: left;
+    display: inline-block;
+}
+#content .breadcrumbs {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+#content .breadcrumbs a {
+    color: black;
+    text-decoration: underline;
+}
+#content .notification {
+    background: #143B64 url("http://designs.squiz.williamhill.com/__data/assets/image/0003/31719/bg-notification.jpg?v=0.0.2");
+    color: white;
+    width: 488px;
+    height: 32px;
+    padding: 3px 80px 4px 100px;
+    display: none;
+    position: relative;
+    clear: both;
+    font-size: 11px;
+    line-height: 16px;
+}
+#content .notification p {
+    margin: 0;
+    line-height: 16px;
+}
+#content .notification .close {
+    color: black;
+    width: 9px;
+    height: 9px;
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 14px;
+    line-height: 7px;
+}
+#content .content-container aside {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0020/30359/bg-info-panel.jpg?v=0.1.4") right top no-repeat;
+    width: 186px;
+    min-height: 221px;
+    margin-right: 10px;
+    padding-right: 12px;
+    float: left;
+}
+#content .content-container aside .menu {
+    margin-bottom: 27px;
+}
+#content .content-container aside .menu li {
+    border-bottom: 1px solid #AEAEAE;
+}
+#content .content-container aside .menu li.active {
+    margin-top: -1px; /* hides the border-bottom from previous list item */
+    border-bottom: 1px solid white;
+}
+#content .content-container aside .menu li a {
+    color: #333;
+    width: auto;
+    height: 25px;
+    padding: 0 4px;
+    display: block;
+    font-size: 12px;
+    line-height: 25px;
+}
+#content .content-container aside .menu li a:hover {
+    background-color: #f1f1f1;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f1f1), color-stop(100%, #D6D6D6));
+    background-image: -webkit-linear-gradient(#f1f1f1 0%, #D6D6D6 100%);
+    background-image:    -moz-linear-gradient(#f1f1f1 0%, #D6D6D6 100%);
+    background-image:     -ms-linear-gradient(#f1f1f1 0%, #D6D6D6 100%);
+    background-image:      -o-linear-gradient(#f1f1f1 0%, #D6D6D6 100%);
+    background-image:         linear-gradient(#f1f1f1 0%, #D6D6D6 100%);
+}
+#content .content-container aside .menu li.active a {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0011/30701/icon-arrow.png?v=0.0.2") 176px center no-repeat;
+    color: #367097;
+    border-top:    1px solid #367097;
+    border-bottom: 1px solid #367097;
+    font-weight: bold;
+}
+#content .content-container aside .chat {
+    margin-bottom: 27px;
+    border-top:    1px solid #AEAEAE;
+    border-bottom: 1px solid #AEAEAE;
+}
+#content .content-container aside .chat a {
+    width: auto;
+    padding: 2px 5px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    display: block;
+    font-size: 11px;
+}
+#content .content-container aside .chat a strong {
+    color: #00446D;
+    display: block;
+    clear: both;
+}
+#content .content-container aside .chat a span {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0018/30465/icon-chat.gif?v=0.0.4") no-repeat;
+    color: #333;
+    padding-left: 18px;
+}
+#content .content-container aside .app-store {
+    margin-bottom: 5px;
+    display: block;
+    clear: both;
+}
+#content .content-body {
+    width: 460px;
+    margin-bottom: 20px;
+    float: left;
+    display: inline-block;
+}
+#content .content-body p {
+    font-size: 11px;
+}
+#content .content-body ul {
+    list-style: disc inside;
+    font-size: 11px;
+}
+#content #featuredPanel {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0019/30349/promo-base.jpg?v=0.0.5") no-repeat left bottom;
+    width: auto;
+    height: 190px; /* NOTICE possible that this should be 184px, if they request it */
+    padding-bottom: 5px;
+    position: relative;
+}
+#content #featuredPanel li {
+    position: absolute;
+}
+#content .button.day-trader-button {
+    width: 200px;
+    height: 19px;
+    padding: 2px 0 3px;
+    position: absolute;
+    top: 112px;
+    left: 385px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    z-index: 2;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4);
+    -moz-box-shadow:    0 1px 1px rgba(0,0,0,.4);
+    box-shadow:         0 1px 1px rgba(0,0,0,.4);
+}
+.internet-explorer #content .button.day-trader-button {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0007/32749/bg-day-trader-button.png?v=0.0.2");
+}
+.internet-explorer #content .button.day-trader-button:hover {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0006/32748/bg-day-trader-button-hover.png?v=0.0.2");
+}
+.internet-explorer #content .button.day-trader-button:active {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0005/32747/bg-day-trader-button-active.png?v=0.0.2");
+}
+#content .daytrader-button-placeholder {
+    background-color: #699300;
+    background-image: -moz-linear-gradient(top, #a6d500, #699300);
+    background-image: -ms-linear-gradient(top, #a6d500, #699300);
+    background-image: -o-linear-gradient(top, #a6d500, #699300);
+    background-image: -webkit-linear-gradient(top, #a6d500, #699300);
+    background-image: linear-gradient(top, #a6d500, #699300);
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength = 1, direction = 180, color = '#414141');
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#a6d500', endColorstr = '#699300');
+    color: #FFF;
+    width: auto;
+    padding: 17px 22px;
+    position: absolute;
+    top: 410px;
+    left: 628px;
+    font-size: 23px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px 1px #292929;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 1, Direction = 180, Color = '#414141')";
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#a6d500', endColorstr = '#699300')";
+}
+#content .section-title {
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #595D60;
+    display: block;
+}
+#content .section-title h1 {
+    color: #595D60;
+    margin-bottom: 1px;
+    padding: 10px 0 3px;
+    border-bottom: 1px dotted #595D60;
+    font-size: 16px;
+    font-weight: bold;
+}
+#content .section-grid {
+    float: left;
+    list-style: none;
+}
+#content .section-grid li {
+    background-color: #D3D3D3;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F1F1F1), color-stop(100%, #D3D3D3));
+    background-image: -webkit-linear-gradient(#F1F1F1 0%, #D3D3D3 100%);
+    background-image:    -moz-linear-gradient(#F1F1F1 0%, #D3D3D3 100%);
+    background-image:     -ms-linear-gradient(#F1F1F1 0%, #D3D3D3 100%);
+    background-image:      -o-linear-gradient(#F1F1F1 0%, #D3D3D3 100%);
+    background-image:         linear-gradient(#F1F1F1 0%, #D3D3D3 100%);
+    width: 215px;
+    height: 140px;
+    margin-bottom: 26px;
+    padding: 0 7px;
+    border-bottom: 1px solid #ABABAB;
+    float: left;
+    display: inline-block;
+}
+.internet-explorer #content .section-grid li {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0010/32689/bg-section-grid-li.png?v=0.0.2") bottom repeat-x;
+}
+#content .section-grid .even{
+    margin-left: 1px;
+    border-left: 1px solid #ABABAB;
+    -webkit-border-radius: 0 0 0 2px;
+    border-radius:         0 0 0 2px;
+}
+#content .section-grid li h3 {
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+    font-weight: normal;
+}
+#content .section-grid .what-is-day-trader h3 {
+    border-color: #5795CB;
+}
+#content .section-grid .promotions h3 {
+    border-color: #E48A2F;
+}
+#content .section-grid .our-markets h3 {
+    border-color: #990C65;
+}
+#content .section-grid .faqs h3 {
+    border-color: #41ABD7;
+}
+#content .section-grid .step-by-step-guide h3 {
+    border-color: #8455A2;
+}
+#content .section-grid .financial-trading-explained h3 {
+    border-color: #92BD2E;
+}
+#content .section-grid li p {
+    height: 40px;
+    margin: 5px 0 0;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.2em;
+}
+#content .section-grid li a {
+    height: 73px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+#content .section-grid li a span {
+    color: white;
+    width: 15px;
+    height: 10px;
+    padding: 2px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 4px;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+}
+.internet-explorer #content .section-grid li a span {
+    font-size: 22px;
+    line-height: 8px;
+}
+#content .section-grid .what-is-day-trader a span {
+    background-color: #5795CB;
+}
+#content .section-grid .promotions a span {
+    background-color: #E48A2F;
+}
+#content .section-grid .our-markets a span {
+    background-color: #990C65;
+}
+#content .section-grid .faqs a span {
+    background-color: #41ABD7;
+}
+#content .section-grid .step-by-step-guide a span {
+    background-color: #8455A2;
+}
+#content .section-grid .financial-trading-explained a span {
+    background-color: #92BD2E;
+}
+#content #about {
+    width: 100%;
+    float:left;
+}
+#content #about .toggle {
+    background-color: #2472A2;
+    height: 14px;
+    padding: 5px 8px;
+    display: block;
+}
+#content #about .toggle a {
+    color: white;
+    padding: 0 20px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+    background: url('http://designs.squiz.williamhill.com/__data/assets/image/0003/9408/expand-close.png?v=0.0.3') left top no-repeat;
+}
+#content #about .toggle a.expanded {
+    background-position: left bottom;
+}
+#content #about div {
+    background-color: #F1F1F1;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e3e7eb), color-stop(30%, #F1F1F1));
+    background-image: -webkit-linear-gradient(#e3e7eb 0%, #F1F1F1 30%);
+    background-image:    -moz-linear-gradient(#e3e7eb 0%, #F1F1F1 30%);
+    background-image:     -ms-linear-gradient(#e3e7eb 0%, #F1F1F1 30%);
+    background-image:      -o-linear-gradient(#e3e7eb 0%, #F1F1F1 30%);
+    background-image:         linear-gradient(#e3e7eb 0%, #F1F1F1 30%);
+    padding: 4px;
+    border-spacing: 0;
+    border-collapse: separate;
+    display: none;
+}
+#content #about div p {
+    font-size: 11px;
+}
+#content .expandable-content {
+    list-style: none !important; /* important is necessary here to override #content .content-body ul */
+    font-size: 11px;
+}
+#content .expandable-content li {
+    line-height: 1.618em;
+}
+#content .expandable-content li h4 {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#content .expandable-content li > div {
+    padding: 5px 0 5px 10px;
+    display: none;
+}
+.carousel {
+    background-color: #D4D4D4;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e3e7eb), color-stop(30%, #D4D4D4));
+    background-image: -webkit-linear-gradient(#F1F1F1 0%, #D4D4D4 30%);
+    background-image:    -moz-linear-gradient(#F1F1F1 0%, #D4D4D4 30%);
+    background-image:     -ms-linear-gradient(#F1F1F1 0%, #D4D4D4 30%);
+    background-image:      -o-linear-gradient(#F1F1F1 0%, #D4D4D4 30%);
+    background-image:         linear-gradient(#F1F1F1 0%, #D4D4D4 30%);
+    height: 600px;
+    padding-left: 10px;
+    border-right: 1px solid #CCC;
+    border-left:  1px solid #CCC;
+    position: relative;
+    zoom: 1;
+}
+.internet-explorer .carousel {
+    background: #D4D4D4 url("http://designs.squiz.williamhill.com/__data/assets/image/0019/32707/bg-carousel.png?v=0.0.2") repeat-x;
+}
+.carousel .prev,
+.carousel .next {
+    background: url("http://designs.squiz.williamhill.com/__data/assets/image/0005/30983/carousel-next-prev.png?v=0.1.1") no-repeat;
+    width: 36px;
+    height: 36px;
+    display: block;
+    position: absolute;
+    top: 190px;
+    zoom: 1;
+}
+.carousel .prev {
+    background-position: left bottom;
+    left: -1px;
+}
+.carousel .next {
+    right: -1px;
+}
+.carousel .carousel-container {
+    width: 438px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.carousel .carousel-container .items {
+    display: block;
+    position: absolute;
+    list-style: none;
+}
+.carousel .carousel-container .items li {
+    width: 438px;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+}
+.carousel .carousel-container .items li h2 {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.carousel .carousel-container .items li div {
+    margin-top: 70px;
+}
+.carousel .carousel-container .items li div a {
+    color: black;
+    text-decoration: underline;
+}
+.carousel .carousel-nav {
+    position: absolute;
+    top: 296px;
+}
+.carousel .carousel-nav li {
+    background-color: #6E757B;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6E757B), color-stop(100%, #42474D));
+    background-image: -webkit-linear-gradient(#6E757B 0%, #42474D 100%);
+    background-image:    -moz-linear-gradient(#6E757B 0%, #42474D 100%);
+    background-image:     -ms-linear-gradient(#6E757B 0%, #42474D 100%);
+    background-image:      -o-linear-gradient(#6E757B 0%, #42474D 100%);
+    background-image:         linear-gradient(#6E757B 0%, #42474D 100%);
+    width: 52px;
+    height: 39px;
+    margin-right: 4px;
+    border: 1px solid #D4D4D4;
+    float: left;
+    display: inline-block;
+    position: relative;
+    line-height: 11px;
+}
+.carousel .carousel-nav li.active {
+    border-color: black;
+}
+.carousel .carousel-nav li.last {
+    margin-right: 0;
+}
+.carousel .carousel-nav li a {
+    color: white;
+    padding: 4px 5px;
+    display: block;
+    font-size: 9px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.carousel .carousel-nav li.active a {
+    padding: 5px 5px 3px;
+}
+.carousel .carousel-nav li .arrow {
+    width: 0;
+    height: 0;
+    border-right:  5px solid transparent;
+    border-bottom: 5px solid black;
+    border-left:   5px solid transparent;
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: 23px;
+}
+.carousel .carousel-nav li.active .arrow {
+    display: block;
+}
+
+/* ---- 07. PLACEHOLDER CONTENT STYLES ---- */
+
+.placeholder #content {
+    background: url("./?a=31990") no-repeat;
+    max-width: 979px;
+    height: 502px;
+    padding: 0;
+}
+.placeholder .container {
+    color: white;
+    width: auto;
+    height: 450px;
+    padding: 50px 5px 0 50px;
+    border: 1px solid white;
+    position: relative;
+}
+.placeholder .container .top-text {
+    width: 637px;
+    float: right;
+    text-align: left;
+}
+.placeholder .container .top-text p {
+    text-align: right;
+}
+.placeholder .container .center-text {
+    margin-top: 95px;
+    clear: both;
+}
+.ie7 .placeholder .container .center-text {
+    margin-top: 155px;
+    clear: none;
+}
+.placeholder .container .center-text p,
+.placeholder .container .top-text {
+    font-size: 15px;
+}
+.placeholder .container .center-text span {
+    display: block;
+    line-height: 14px;
+}
+.placeholder .container .center-text span p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.placeholder .container .center-text ol {
+    list-style-position: inside;
+    font-size: 12px;
+}
+.placeholder .container .center-text ol .last {
+    margin-top: 14px;
+}
+.placeholder .container .center-text ol li a,
+.placeholder .container .bottom-text a {
+    color: white;
+    text-decoration: underline;
+}
+.placeholder .container .bottom-text {
+    margin-top: 35px;
+    font-size: 12px;
+}
+.placeholder .container .bottom-text span {
+    width: 700px;
+    margin-bottom: 50px;
+    display: block;
+    line-height: 14px;
+}
+
+/* ---- 08. FOOTER STYLES ---- */
+
+footer {
+    background: #1E6E9B;
+    color: white;
+    padding: 7px 0 70px;
+    font-size: 10px;
+    line-height: 12px;
+}
+footer a {
+    text-decoration: underline;
+}
+footer #copyright,
+footer #more-info {
+    margin-left: 7px;
+    float: left;
+    display: inline-block;
+}
+footer #legal,
+footer #payments {
+    margin-right: 7px;
+    float: right;
+    display: inline-block;
+    clear: right;
+}
+footer #payments {
+    width: 100%;
+    height: 26px;
+    margin: 15px 0 20px;
+    float: none;
+}
+footer #payments a {
+    width: 100%;
+    width: 925px;
+    height: 100%;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: block;
+    position: relative;
+}
+footer #payments a img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+footer #legal {
+    word-spacing: 4px;
+}
+footer #legal li {
+    display: inline;
+}
+footer #legal li a {
+    color: white;
+    text-decoration: underline;
+    word-spacing: 0px;
+}
+footer ul#more-info {
+    background: #002134;
+    width: 965px;
+    height: auto;
+    margin: 0 0 20px;
+    padding: 0 15px;
+    clear: both;
+}
+footer ul#more-info li {
+    width: 178px;
+    height: 44px;
+    margin-right: 15px;
+    padding-top: 10px;
+    float: left;
+    display: inline-block;
+    font-size: 11px;
+}
+footer #more-info li a {
+    color: white;
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+footer #more-info li p {
+    margin-bottom: 0;
+}
+footer p {
+    clear: both;
+    font-size: 11px;
+}
+footer #responsible-gaming p {
+    padding-left: 6px;
+    float: left;
+    line-height: 36px;
+}
+footer ul#footer-images {
+    float: left;
+    vertical-align: bottom;
+}
+footer ul#footer-images li {
+    margin-left: 3px;
+    float: left;
+    display: inline-block;
+}
+footer #footer-faqs {
+    padding: 0 6px;
+    clear: both;
+}
+footer .footer-legal-divider {
+    height: 9px;
+    margin: 0 5px;
+    border-right: 1px solid white;
+    display: inline-block;
+    font-size: 8px;
+}
+footer {
+    background: #1E6E9B;
+    color: white;
+    padding: 7px 0 70px;
+    font-size: 10px;
+    line-height: 12px;
+}
+.placeholder footer {
+    background: #155180;
+}
+
+/* ---- 09. HELP MODAL STYLES ---- */
+
+#helpWindow {
+width: 996px;
+height: 546px;
+margin: -273px 0 0 -498px;
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+overflow: hidden;
+z-index: 990;
+}
+#helpWindow_hdrTL, #helpWindow_hdrTR, #helpWindow_ftrBL, #helpWindow_ftrBR {
+float: left;
+overflow: hidden;
+}
+#helpWindow_hdrTL, #helpWindow_hdrTR {
+width: 14px;
+height: 28px;
+}
+#helpWindow_ftrBL, #helpWindow_ftrBR {
+width: 14px;
+height: 14px;
+}
+#helpWindow_hdrTL {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/popupEdgeSprites.png") no-repeat scroll 0 0 transparent;
+}
+#helpWindow_hdrTR {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/popupEdgeSprites.png") no-repeat scroll -14px 0 transparent;
+}
+#helpWindow_ftrBL {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/popupEdgeSprites.png") no-repeat scroll 0 -28px transparent;
+clear: left;
+}
+#helpWindow_ftrBR {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/popupEdgeSprites.png") no-repeat scroll -14px -28px transparent;
+}
+#helpWindow.selected_option_b #helpWindow_ftrBR,
+#helpWindow.selected_option_d #helpWindow_ftrBR {
+background-position: -28px -28px;
+}
+#helpWindow.selected_option_a #helpWindow_ftrBR,
+#helpWindow.selected_option_c #helpWindow_ftrBR,
+#helpWindow.selected_option_e #helpWindow_ftrBR {
+background-position: -14px -28px;
+}
+#helpWindow.selected_option_e #helpWindow_ftrBL {
+background-position: -28px -14px;
+}
+#helpWindow_hdr, #helpWindow_ftr, #helpWindow_ftrExtsn {
+float: left;
+overflow: hidden;
+}
+#helpWindow_hdr {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/repeatingSprites.png") repeat-x scroll 0 0 transparent;
+width: 968px;
+height: 28px;
+cursor: move;
+}
+#helpWindow_ftr {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/repeatingSprites.png") repeat-x scroll 0 -42px transparent;
+width: 745px;
+height: 14px;
+}
+#helpWindow_ftrExtsn {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/repeatingSprites.png") repeat-x scroll 0 -28px transparent;
+width: 223px;
+height: 14px;
+}
+#helpWindow.selected_option_e #helpWindow_ftrExtsn {
+background-position: -7px -28px;
+}
+#helpWindow_content {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/helpWindow_bg.png") repeat scroll 0 0 transparent;
+width: 990px;
+height: 504px;
+padding: 0 3px;
+float: left;
+overflow: hidden;
+}
+#helpWindow_vwCtrl_outer {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewControlSprites.png") repeat-x scroll 0 2px #D7D7DB;
+height: 22px;
+border-top: 1px solid #AAAEB6;
+clear: right;
+}
+#helpWindow_vwCtrl_inner {
+height: 20px;
+margin-left: 1px;
+border-top: 1px solid white;
+}
+#helpWindow_vwCtrl, #helpWindow_vwCtrlExtsn {
+height: 20px;
+border-bottom: 1px solid #AAAEB6;
+float: left;
+overflow: hidden;
+}
+#helpWindow_vwCtrl {
+width: 754px;
+}
+#helpWindow_vwCtrlExtsn {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewControlSprites.png") repeat-x scroll 0 -20px transparent;
+width: 235px;
+}
+#helpWindow_vwCtrl ul {
+margin: 0;
+padding: 0;
+}
+#helpWindow_vwCtrl ul li {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionDivider.png") no-repeat scroll right bottom transparent;
+height: 20px;
+padding: 0 1px;
+float: left;
+clear: none;
+}
+.helpWindow_vwCtrl_option_a span, .helpWindow_vwCtrl_option_b span, .helpWindow_vwCtrl_option_c span, .helpWindow_vwCtrl_option_d span, .helpWindow_vwCtrl_option_e span {
+height: 20px;
+display: block;
+cursor: pointer;
+}
+.helpWindow_vwCtrl_option_a span {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -1px -20px transparent;
+width: 35px;
+}
+.helpWindow_vwCtrl_option_a span.vwCtrl_option_active {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -1px 0 transparent;
+width: 35px;
+}
+.helpWindow_vwCtrl_option_b span {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -36px -20px transparent;
+width: 37px;
+}
+.helpWindow_vwCtrl_option_b span.vwCtrl_option_active {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -36px 0 transparent;
+width: 37px;
+}
+.helpWindow_vwCtrl_option_c span {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -74px -20px transparent;
+width: 28px;
+}
+.helpWindow_vwCtrl_option_c span.vwCtrl_option_active {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -74px 0 transparent;
+width: 28px;
+}
+.helpWindow_vwCtrl_option_d span {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -101px -20px transparent;
+width: 30px;
+}
+.helpWindow_vwCtrl_option_d span.vwCtrl_option_active {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -101px 0 transparent;
+width: 30px;
+}
+.helpWindow_vwCtrl_option_e span {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -133px -20px transparent;
+width: 36px;
+}
+.helpWindow_vwCtrl_option_e span.vwCtrl_option_active {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/viewOptionsSprite.png") no-repeat scroll -133px 0 transparent;
+width: 36px;
+}
+#helpWindow_vwCtrl ul li.helpWindow_vwCtrl_title {
+color: #6A6C76;
+padding: 0 6px 0 11px;
+font: 11px/20px Arial;
+}
+#helpWindow_mainFrame {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/loading.gif") no-repeat scroll center center white;
+width: 754px;
+height: 481px;
+border-right: 1px solid white;
+border-left: 1px solid white;
+float: left;
+clear: left;
+}
+#helpWindow_subFrame {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/subFrame_bg.jpg") repeat-y scroll left top #F2F2F2;
+width: 233px;
+height: 481px;
+border-left: 1px solid #AAAEB6;
+float: left;
+}
+#helpWindow.selected_option_e #helpWindow_mainFrame, #helpWindow.selected_option_e #helpWindow_subFrame {
+background-image: none;
+border: 0 none;
+}
+#helpWindow #helpWindow_mainFrame iframe, #helpWindow #helpWindow_subFrame iframe {
+background-color: transparent;
+width: 100%;
+height: 100%;
+}
+#iframe_subFrame {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/loading.gif") no-repeat scroll center center transparent;
+}
+#helpWindow_hdr span.helpWindow_title, #helpWindow_hdr span.helpWindow_close, #helpWindow_hdr span.helpWindow_detach {
+color: #244E64;
+position: relative;
+top: 9px;
+font-size: 12px;
+font-weight: bold;
+text-shadow: 0 1px 0 white;
+}
+#helpWindow_hdr span.helpWindow_close, #helpWindow_hdr span.helpWindow_detach {
+float: right;
+}
+#helpWindow_hdr span.helpWindow_close a, #helpWindow_hdr span.helpWindow_detach a {
+color: #244E64;
+padding: 0 20px 0 14px;
+text-decoration: none;
+}
+#helpWindow_hdr span.helpWindow_close a {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/closeDetach.png") no-repeat scroll 48px 1px transparent;
+border-left: 1px solid white;
+}
+#helpWindow_hdr span.helpWindow_detach a {
+background: url("http://whdn.williamhill.com/cms/images/rightNow/closeDetach.png") no-repeat scroll 57px -15px transparent;
+border-right: 1px solid #AAAEB6;
+}
+
+/* ---- 10. MISCELLANEOUS STYLES ---- */
+
+.clear {
+    height: 0;
+    clear: both;
+}
+.clear-left {
+    clear: left;
+}
+.clear-right {
+    clear: right;
+}
+.hide, .hidden {
+    display: none;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.center {
+    text-align: center;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.bold, .strong, strong {
+    font-weight: bold;
+}
+.italic, .em, em {
+    font-style: italic;
+}
+.underline, .u {
+    text-decoration: underline;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.no-bg {
+    background: none !important;
+}
+.no-text {
+    color: transparent !important;
+    font-size: 0;
+    line-height: 0;
+}
+.pointer {
+    cursor: pointer;
+}
+.gray {
+    color: #B2B7BB;
+}
+.gold {
+    color: gold;
+}
+
+/* ---- DO NOT JUST DROP ANY STYLES HERE PLEASE! ---- */
