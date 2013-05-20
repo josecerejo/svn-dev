@@ -2099,6 +2099,7 @@ border-right: 1px solid #AAAEB6;
 }
 .gold {
     color: red;
+    display:none;
 }
 
 /* ---- DO NOT JUST DROP ANY STYLES HERE PLEASE! ---- */
